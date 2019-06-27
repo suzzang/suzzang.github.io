@@ -1,68 +1,280 @@
-# [Start Bootstrap - Clean Blog](https://startbootstrap.com/template-overviews/clean-blog/)
+# Type Theme
 
-[Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/) is a stylish, responsive blog theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form.
+![Default Type Theme blog](https://user-images.githubusercontent.com/816965/30518919-d5978024-9bcd-11e7-81b3-3dd07e99a1f9.png)
 
-## Preview
+A free and open-source [Jekyll](https://jekyllrb.com) theme. Great for blogs and easy to customize.
 
-[![Clean Blog Preview](https://startbootstrap.com/assets/img/screenshots/themes/clean-blog.png)](https://blackrockdigital.github.io/startbootstrap-clean-blog/)
-
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-clean-blog/)**
-
-## Status
-
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-clean-blog/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-clean-blog.svg)](https://www.npmjs.com/package/startbootstrap-clean-blog)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-clean-blog.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-clean-blog)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-clean-blog/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-clean-blog)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-clean-blog/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-clean-blog?type=dev)
-
-## Download and Installation
-
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/clean-blog/)
-* Install via npm: `npm i startbootstrap-clean-blog`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-clean-blog.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-clean-blog)
+[Demo](https://rohanchandra.github.io/type-theme/)
 
 ## Usage
 
-### Basic Usage
+1. Fork and clone the [Type Theme repo](https://github.com/rohanchandra/type-theme): `git clone https://github.com/rohanchandra/type-theme`
+2. [Install Jekyll](https://jekyllrb.com/docs/installation/): `gem install jekyll`
+3. Install the theme's dependencies: `bundle install`
+4. Customize the theme (see below)
+5. Run the Jekyll server: `jekyll serve`
 
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+## Customizing Type Theme
 
-### Advanced Usage
+Open `_config.yml` in a text editor to change most of the blog's settings.
 
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+If a variable in this document is marked as "optional", disable the feature by removing all text from the variable. For example, to prevent the avatar from rendering in the header, the avatar line should read:
 
-#### Gulp Tasks
+```yml
+theme:
+  title: Type Theme
+  avatar:
+  gravatar:
+```
 
-- `gulp` the default task that builds everything
-- `gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
-- `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-- `gulp js` minifies the themes JS file
-- `gulp vendor` copies dependencies from node_modules to the vendor directory
+Notice the avatar variable is left intentionally blank.
 
-You must have npm installed globally in order to use this build environment.
+Below is a summary of the configuration options in Type Theme.
 
-## Bugs and Issues
+### Site configuration
+The most common configurations, included here for guidance, are:
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-clean-blog/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/clean-blog/).
+Jekyll website *without* a subpath (such as a GitHub Pages website for a given username):
 
-## About
+```yml
+# SITE CONFIGURATION
+baseurl: ""
+url: "https://username.github.io"
+```
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+Jekyll website *with* subpath (like the Type Theme demo page):
 
-* https://startbootstrap.com
-* https://twitter.com/SBootstrap
+```yml
+# SITE CONFIGURATION
+baseurl: "/sub-directory"
+url: "https://username.github.io/"
+```
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+Please configure this in `_config.yml` before using the theme.
 
-* http://davidmiller.io
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+### Meta
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+Meta variables hold basic information about your Jekyll site which will be used throughout the site and as meta properties for search engines, browsers, and the site's RSS feed.
 
-## Copyright and License
+Change these variables in `_config.yml`:
 
-Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-clean-blog/blob/gh-pages/LICENSE) license.
+| Variable | Example | Description | Optional |
+|-------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|----------|
+| title | My Jekyll Blog | Name of website | Yes |
+| avatar | assets/img/avatar.png | Path of avatar image, to be displayed in the theme's header | Yes |
+| gravatar | f9879d71855b5ff21e4963273a886bfc | [MD5 hash of your email address](https://secure.gravatar.com/site/implement/hash/) to load your Gravatar in the theme's header | Yes |
+| description | My blog posts | Short description, primarily used by search engines | Yes |
+
+### Header and footer text
+
+Change these variables in `_config.yml`:
+
+
+| Variable | Example | Description | Optional |
+|---------------------------|------------------------------|-------------------------------------------------------------------------|----------|
+| header_text | Welcome to my Jekyll blog | HTML (shown below the navigation) with a background colour for emphasis | Yes |
+| header_text_feature_image | assets/img/sample_feature_img_3.png | Background image for the header text | Yes |
+| footer_text | Copyright 2014 | HTML (shown at end of the site) with lighter text | Yes |
+
+### Icons
+
+Add your username on selected websites in the icon section of the `_config.yml` file to display the site's icon from [Font Awesome](https://fortawesome.github.io/Font-Awesome/) in the header navigation. All icon variables should be your username enclosed in quotes (e.g. "username"), except for the following variables:
+
+
+| Variable | Example | Description | Optional |
+|----------------|-------------------------------------------------|--------------------------------------------------------|----------|
+| rss | true | Takes boolean value (true/false) to show RSS feed icon | Yes |
+| email_address | type@example.com | Email address | Yes |
+| linkedin | https://www.linkedin.com/in/FirstLast | Full URL to profile on LinkedIn | Yes |
+| stack_exchange | https://stackoverflow.com/users/0000/first-last | Full URL to profile on Stack Exchange | Yes |
+
+### Scripts
+
+Change these variables in `_config.yml`:
+
+
+| Variable | Example | Description | Optional |
+|------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------|----------|
+| google_analytics | UA-123456-01 | Google Analytics [tracking ID](https://support.google.com/analytics/answer/1032385?hl=en) | Yes |
+| disqus_shortname | shortname | Disqus [shortname](https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-) | Yes |
+| katex | true | Takes boolean value (true/false) to conditionally load [KaTeX](https://khan.github.io/KaTeX/) scripts required for math typesetting | Yes |
+
+Scripts listed here are only loaded if you provide a value in the `_config.yml` file.
+
+### Localization strings
+
+Change localization string variables in `_config.yml`.
+
+English text used in the theme (such as the "continue reading" label) has been grouped  so you can quickly translate the theme or change labels to suit your needs.
+
+### Colours, typography, padding
+
+![A selection of colours set in Type Theme by modifying the CSS](https://cloud.githubusercontent.com/assets/816965/5142488/130869a6-71d7-11e4-8a38-a69ec1673436.png)
+
+
+| Variable | Example | Description | Optional |
+|--------------|----------------------------|--------------------------------------|--------------------------------------------------------------|
+| google_fonts | "Playfair+Display:400,700\ | PT+Sans:400,700,700italic,400italic" | [Google Fonts](https://www.google.com/fonts) to load for use |
+
+Navigate to the `_sass > base` directory and open `_variables.scss` to change colours, typography and padding used in the theme with CSS.
+
+Once you have loaded a Google Font in `config.yml`, you can integrate the fonts into your CSS by changing the font-family in `_variables.scss`. For example, after loading the Playfair Display and PT Sans fonts from Google:
+
+```css
+// Typography
+$font-family-main: 'PT Sans', Helvetica, Arial, sans-serif;
+$font-family-headings: 'Playfair Display', Helvetica, Arial, sans-serif;
+```
+
+Mozilla's [ColorPicker](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool) is a helpful tool to get your preferred colours in hexadecimal or RGBA form for use in `_variables.scss`.
+
+### Customize style when using the remote_theme
+
+If you're using Type Theme as a `remote_theme`, you can override variables and styles.
+To do so, simply create a `assets/css/main.scss` file on your website with the following content:
+
+```scss
+// assets/css/main.scss
+---
+---
+
+@import "type-theme";
+```
+
+`@import "type-theme";` is including the theme styles, so you can add custom imports before and after it, depending on your needs.
+Best practice is to put your custom files in the `_sass` folder of your progect. Jekyll will automatically look for them there.
+For example, say you wanted to override some theme variables and add some custom styles, you can create the following files:
+
+```scss
+// _sass/_variables.scss
+$background-color: black;
+```
+
+```sass
+// _sass/_custom.sass
+
+// SASS is supported as well, just note the file extension is .sass
+.feature-image header
+  height: 300px
+```
+
+Then import them both into `main.scss`:
+
+```scss
+// assets/css/main.scss
+---
+---
+
+@import "variables";
+@import "type-theme";
+@import "custom";
+```
+
+## Posts and pages in Type Theme
+Please refer to the [Jekyll docs for writing posts](https://jekyllrb.com/docs/posts/). Non-standard features are documented below.
+
+### Math typesetting
+Wrap math expressions with `$$` signs in your posts and make sure you have set the `katex` variable in `_config.yml` to `true` for math typesetting.
+
+For inline math typesetting, type your math expression on the *same line* as your content. For example:
+
+```latex
+Type math within a sentence $$2x^2 + x + c$$ to display inline
+```
+
+For display math typesetting, type your math expression on a *new line*. For example:
+
+```latex
+$$
+  \bar{y} = {1 \over n} \sum_{i = 1}^{n}y_i
+$$
+```
+
+Type Theme makes use for [KaTeX](https://khan.github.io/KaTeX/) for typesetting.
+
+### Feature images
+
+![Posts with geometric feature images](https://cloud.githubusercontent.com/assets/816965/5142406/19726478-71d6-11e4-8111-94f788b0e44d.png)
+
+Add a feature image by specifying a path to an image in the [front matter](http://jekyllrb.com/docs/frontmatter/) in the form of `feature-img: "img/PATH_TO_IMAGE.png"`.
+
+For example:
+
+```yml
+---
+layout: post
+title: Hello World
+feature-img: "assets/img/sample_feature_img.png"
+---
+```
+
+By default, the page title is displayed on top of the feature image, as well as on the browser's tab. You can change the feature image's displayed title by specifying a `feature-title` in the front matter:
+
+```yml
+---
+layout: post
+title: Short title
+feature-title: A much longer title
+feature-img: "assets/img/sample_feature_img.png"
+---
+```
+
+### Hiding pages from navigation
+
+In the front matter of a page, add `hide: true` to prevent the page from showing up in the header's navigation bar (visitors can still visit the URL through other means).
+
+For example:
+
+```yml
+---
+layout: page
+title: "Error 404: Page not found"
+permalink: /404.html
+hide: true
+---
+```
+
+### Tags
+
+Post tags should be placed between `[]` in your post metadata. Seperate each tag with a comma.
+
+For example:
+
+```yml
+---
+layout: post
+title: Markdown and HTML
+tags: [sample, markdown, html]
+---
+```
+
+A tags listing will be automatically generated using the `tags.html` file provided in Type theme. If you're not using the tags feature it is safe to delete `tags.html`.
+
+### Search
+
+The search feature can be activated in the `_config.yml` file by changing its value from `false` to `true`.
+
+```yml
+  #Scripts
+  search: true
+```
+
+Once activated, the search bar will appear in the header. This feature uses [Lunr](https://lunrjs.com/) and searches through the title, tags and content of your posts.
+
+### Subtitles
+A subtitle can be displayed below your title on permalink post pages.
+
+To enable this feature, add `subtitle` to your post metadata.
+
+For example:
+
+```yml
+---
+layout: post
+title: "This is a title"
+subtitle: "This is a subtitle"
+---
+```
+
+## License
+[The MIT License (MIT)](https://github.com/rohanchandra/type-theme/blob/master/LICENSE)
